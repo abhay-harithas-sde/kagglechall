@@ -1,0 +1,87 @@
+Competition Rules
+Please read carefully before submitting.
+
+Eligibility
+This competition is open to NxtWave Masterclass students only
+One account per participant - no team submissions
+You must join this competition before the deadline to submit
+What You Must Submit
+Every submission must include all 3 deliverables inside your submission.csv:
+
+1. submission.csv (upload here on Kaggle)
+Must contain exactly 15 answers - one per question (Q01-Q15)
+Questions and answers are auto-encoded by the starter notebook
+Do not manually edit the CSV - let the notebook generate it
+Missing rows = score deduction
+2. Streamlit App URL (entered in the notebook before generating CSV)
+Deploy your chatbot to Streamlit Community Cloud (free)
+The URL must be publicly accessible and working
+App must be able to answer HR questions live
+Entered in the last cell of the notebook - automatically saved into the CSV
+3. LangSmith Trace URL (entered in the notebook before generating CSV)
+Enable LangSmith tracing in your RAG pipeline
+Share a public project link from your LangSmith dashboard
+Traces must show your full RAG chain execution
+Entered in the last cell of the notebook - automatically saved into the CSV
+⚠️ Both links are validated automatically - missing or invalid links = score 0
+
+Technical Rules
+You must use RAG - direct LLM answers without retrieval will score low
+Answers must be based only on the provided HR policy documents
+Do not hardcode answers - your pipeline must actually retrieve and generate
+Any LLM is allowed (Groq, Gemini, OpenAI, etc.)
+Any embedding model is allowed
+LangChain is recommended but not mandatory
+Academic Integrity
+Sharing your submission.csv with other students is not allowed
+Plagiarism detection will be run on all submissions
+Submissions found to be copied will be disqualified
+You may discuss approaches, but code and outputs must be your own
+Submission Limit
+Maximum 5 submissions per day
+Your best score will appear on the leaderboard
+Questions?
+Post in the Discussion tab or reach out to your instructor.
+
+Good luck! 🚀
+
+"Submission Guidelines
+
+Before Resubmitting
+
+* Complete the LangChain MasterClass (Videos, Cheat Sheets, and MCQs)
+* Keep your Kaggle Notebook **Private**
+* Share notebook access with: **dsml.contentteam@gmail.com
+* Ensure your Streamlit link is active and responding correctly to queries
+* Use **Groq** or other deployable cloud-hosted models
+* Do not use **Ollama/local deployments**, as they cannot be evaluated
+
+Technical Requirements
+* Use Groq API or other cloud-hosted LLM providers
+* Do NOT use Ollama or any locally hosted models
+* Projects that run only on your local machine cannot be evaluated
+* Ensure your deployed application is accessible to evaluators without additional setup
+Project Suppor
+
+Project Support
+
+* Watch the Project Launch Session Recording if you need help understanding the project
+* Post all project-related questions in the **Kaggle Discussions** section
+
+Evaluation Policy
+
+* Do not copy code, notebooks, submission files, or deployments from other students
+* Do not manipulate submissions or leaderboard rankings
+* Plagiarism, submission sharing, or repeated violations will result in disqualification
+
+GRIT Bonus Miles Eligibility
+
+To qualify for GRIT Bonus Miles:
+
+* Complete the LangChain MasterClass
+* Complete all Videos, Cheat Sheets, and MCQs
+* Secure a Top 100 rank on the Kaggle Leaderboard
+* Clear Level 1 in both DSML and GenAI
+
+No MasterClass Completion = No GRIT Bonus Miles Eligibility
+"

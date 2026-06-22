@@ -1,0 +1,131 @@
+Overview
+Welcome to the Zyro Dynamics HR Help Desk RAG Challenge! 🚀
+Zyro Dynamics Pvt. Ltd. is a fast-growing SaaS company with 500+ employees across Engineering, Sales, and Operations, the HR team is overwhelmed with repetitive policy questions every day.
+
+Your mission: Build an intelligent HR Help Desk chatbot using RAG (Retrieval-Augmented Generation) that can answer employee HR queries accurately from the company's internal policy documents.
+
+What You Will Build
+A complete RAG pipeline that:
+
+Loads and chunks 11 HR policy PDF documents
+Embeds them into a vector store for semantic search
+Retrieves relevant chunks for any employee question
+Generates accurate, grounded answers using an LLM
+Handles out-of-scope questions gracefully with proper refusal
+Build something you're proud of! 💪
+
+Start
+
+7 hours ago
+Close
+
+18 days to go
+Description
+How to Get Started
+Step 1 - Fork the Starter Notebook
+Click here to open the starter notebook from the data section → 📓 Starter Notebook
+
+Hit "Copy & Edit" to fork it into your workspace. It has everything set up: imports, config, and TODO cells for you to complete.
+
+Step 2 - Add Your API Keys
+In your forked notebook, go to Kaggle Secrets and add:
+
+GROQ_API_KEY - get a free key at https://console.groq.com
+LANGCHAIN_API_KEY - get a free key at https://smith.langchain.com
+Step 3 - Complete the TODO Cells
+The notebook has 6 TODO sections for you to fill:
+
+Load HR PDFs from the dataset
+Chunk the documents
+Build FAISS vector store
+Create the LCEL RAG chain
+Add guardrails for out-of-scope detection
+Test your bot
+Step 4 - Build Your Streamlit App
+Cell 14 is your task! Build a Streamlit chatbot app that:
+
+Loads the HR PDFs and builds the RAG pipeline
+Has a chat interface for employees to ask questions
+Shows source citations with each answer
+Handles out-of-scope questions gracefully
+Deploy your finished app on https://share.streamlit.io for free and copy the URL.
+
+Step 5 - Get Your LangSmith Trace URL
+After running your RAG bot (Cell 12 test questions), your traces are automatically logged:
+
+Go to https://smith.langchain.com
+Open your project → zyro-rag-challenge
+Click on any trace → copy the shareable URL
+Cell 13 in the notebook has step-by-step instructions for this!
+
+Step 6 - Generate & Submit
+Run the last cell → paste your Streamlit URL + LangSmith URL → submission.csv auto-generates → download and submit here!
+
+Dataset
+The competition dataset contains 11 HR policy PDFs from Zyro Dynamics.
+
+Document	Topic
+Company Profile	Company overview, culture
+Employee Handbook	General policies, guidelines
+Leave Policy	EL, SL, Maternity, Paternity
+Work From Home Policy	Hybrid, Remote, Ad-hoc
+Code of Conduct	Ethics, Discipline
+Performance Review Policy	APR, PIP, Ratings
+Compensation & Benefits Policy	Salary, CTC, Grades
+IT & Data Security Policy	Device, Data policy
+Prevention of Sexual Harassment Policy	POSH, ICC
+Onboarding & Separation Policy	Probation, Joining, F&F
+Travel & Expense Policy	Reimbursements
+Submission Requirements
+Your submission.csv must have all 15 rows (Q01-Q15) with:
+
+Encoded answers to all questions
+Valid Streamlit app URL
+Valid LangSmith trace URL
+⚠️ Both links are mandatory - missing either = score 0 automatically!
+
+Tips to Score High 💡
+Use MMR retrieval to get diverse and relevant chunks
+Keep answers grounded: only use info from retrieved chunks
+For out-of-scope questions: refuse clearly and politely
+Test your bot with the 3 sample questions in Cell 12 before submitting
+Put effort into your Streamlit app: a clean UI shows your engineering skills
+Evaluation
+How Your Submission Is Scored
+Your submission.csv is automatically evaluated against hidden ground truth answers using semantic similarity.
+
+Scoring Breakdown
+Questions	Type	Points Each	Total
+Q01 - Q10	In-scope HR questions	8 pts	80 pts
+Q11 - Q15	Out-of-scope (must refuse!)	4 pts	20 pts
+Total			100 pts
+How Scoring Works
+In-scope questions (Q01-Q10):
+
+Your answer is compared to the ground truth answer using semantic similarity. The closer your answer is to the correct policy information, the higher your score.
+
+Out-of-scope questions (Q11-Q15):
+
+These questions cannot be answered from the HR documents. Your bot must refuse gracefully - e.g. "I can only answer HR-related questions from Zyro Dynamics policy documents."
+
+Link Requirements ⚠️
+Both links are mandatory. Missing either = score 0.
+
+Streamlit App URL - your deployed chatbot
+LangSmith Trace URL - your RAG chain traces
+submission.csv Format
+Your file must have exactly 15 rows with these columns:
+
+Column	Description
+question_id	Q01 to Q15
+question_enc	questions (auto-generated)
+answer_enc	answers (auto-generated)
+streamlit_link	your Streamlit app URL
+langsmith_link	your LangSmith trace URL
+✅ The starter notebook generates this file automatically - just run the last cell!
+
+Submit using kaggle cli kaggle competitions submit -c niat-masterclass-rag-challenge -f submission.csv  -m "Message"
+
+GROQ_API_KEY = <set in .env or environment>
+LANGCHAIN_API_KEY = <set in .env or environment>
+KAGGLE_API_KEY = <set in .env or environment>
